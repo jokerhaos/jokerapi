@@ -22,19 +22,22 @@ return [
     //登陆过期时间
     'admin_login_expire' => 180000,
     // 接口白名单
-    'api_white_list' => env('app.api_white_list'),
+    'api_white_list' => env('app.api_white_list', [
+        'admin/AdminLogin/verify',
+        'admin/AdminLogin/login'
+    ]),
     // 权限白名单
-    'rule_white_list' => [
+    'rule_white_list' => env('app.rule_white_list', [
         'admin/AdminUser/userEditPwd',
         'admin/AdminLogin/logout',
         'admin/Upload/images',
-    ],
+    ]),
     // token 
     'token' => [
         // 密钥
         'key' => env('admin.token_key', '3fPbaNsdIFkqaxx5'),
         // 签发者
-        'iss' => 'xiaohaobz',
+        'iss' => 'newgm',
         // 有效时间(小时)
         'exp' => 24,
     ],

@@ -9,6 +9,8 @@
 use think\facade\Config;
 use think\facade\Request;
 
+CONST GLBAL_LIMIT=10;
+
 /**
  * 获取请求用户id
  *

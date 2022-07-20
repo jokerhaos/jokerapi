@@ -6,8 +6,8 @@
  * @LastEditTime: 2021-08-25 13:50:53
  */
 
-use app\common\lib\Logger;
 use think\facade\Request;
+use think\response\Json;
 
 /**
  * 计算指定日期和现在距离几周
@@ -86,7 +86,7 @@ function randomkeys($length)
  * 
  * @return json
  */
-function success($data = [], $msg = '操作成功', $code = 200)
+function success($data = [], $msg = '操作成功', $code = 200): Json
 {
     return json([
         'code' => $code,
@@ -104,7 +104,7 @@ function success($data = [], $msg = '操作成功', $code = 200)
  * 
  * @return json
  */
-function error($msg = '操作失败', $err = [], $code = 400)
+function error($msg = '操作失败', $err = [], $code = 400): Json
 {
     return json([
         'code' => $code,
